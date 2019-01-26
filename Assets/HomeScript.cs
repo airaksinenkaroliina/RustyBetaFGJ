@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HomeScript : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class HomeScript : MonoBehaviour
             Debug.Log("Im a sofa");
             dialogCanvas.GetComponent("DialogName");
             dialogScript.UpdateDialog("DudeHungry");
+            SceneManager.LoadScene("NeighborScene");
         }
         else if (name == "Fridge")
         {
