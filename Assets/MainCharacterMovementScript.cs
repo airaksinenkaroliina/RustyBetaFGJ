@@ -107,13 +107,15 @@ public class MainCharacterMovementScript : MonoBehaviour
     {
         if (other.name == "NeighbourDoor")
         {
-            if (inventory.GetComponent<InventoryScript>().dogInInvertory == true)
+            if (inventory.GetComponent<InventoryScript>().dogInInvertory == true 
+            && dog.GetComponent<DogScript>().distanceReached == false)
             {
                 inventory.GetComponent<InventoryScript>().Dog();
                 dogWalking = true;
                 dog.SetActive(true);
             }
-            else if(dog.GetComponent<DogScript>().distanceReached == true)
+            else if(inventory.GetComponent<InventoryScript>().dogInInvertory == true
+            && dog.GetComponent<DogScript>().distanceReached == true)
             {
                 inventory.GetComponent<InventoryScript>().MoneyChange(50);
                 dogWalking = false;

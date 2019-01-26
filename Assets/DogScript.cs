@@ -39,9 +39,9 @@ public class DogScript : MonoBehaviour
         else if(distanceWalked > distanceGoal && distanceReached == false)
         {
             meter.SetActive(true);
-            int money = 50;
+            //int money = 50;
             distanceReached = true;
-            GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>().MoneyChange(money);
+            //GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>().MoneyChange(money);
         }
     }
 }
