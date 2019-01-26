@@ -33,7 +33,7 @@ public class HomeScript : MonoBehaviour
             Debug.Log("Im a sofa");
             dialogCanvas.GetComponent("DialogName");
             dialogScript.UpdateDialog("DudeHungry");
-            SceneManager.LoadScene("NeighborScene");
+            SceneManager.LoadScene("World");
         }
         else if (name == "Fridge")
         {
@@ -53,6 +53,11 @@ public class HomeScript : MonoBehaviour
         {
             Debug.Log("Wufff wuffff");
             dialogScript.UpdateDialog("Remppa");
+        }
+        else if (name == "Back")
+        {
+            Debug.Log("Go out for adventure");
+            SceneManager.LoadScene("World");
         }
     }
 }
