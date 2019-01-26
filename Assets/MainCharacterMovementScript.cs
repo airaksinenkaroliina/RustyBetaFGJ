@@ -133,7 +133,7 @@ public class MainCharacterMovementScript : MonoBehaviour
             if (dogWalking == false)
             {
                 Debug.Log("Shop Shop!");
-                SceneManager.LoadScene("ShopScene");
+                SceneManager.LoadScene("StoreScene");
             }
             else if (dogWalking == true)
             {

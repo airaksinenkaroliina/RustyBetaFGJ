@@ -12,6 +12,8 @@ public class InventoryScript : MonoBehaviour
     public bool pizza;
     public bool vegetables;
     public bool drinks;
+    public bool dudeHungry;
+    public bool phone;
 
     private static InventoryScript inventoryScript;
     void Awake()
@@ -31,8 +33,11 @@ public class InventoryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("start inventory");
         dogInInvertory = false;
         drinks = false;
+        dudeHungry = true;
+        phone = false;
     }
 
     // Update is called once per frame
@@ -53,6 +58,38 @@ public class InventoryScript : MonoBehaviour
         else 
         {
             dogInInvertory = false; 
+        }
+    }
+
+    public bool HungryDude()
+    {
+        if (pizza && phone)
+        {
+            return false;
+        }
+        else if (pizza)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public bool PhoneLostDude()
+    {
+        if (pizza && phone)
+        {
+            return false;
+        }
+        else if (pizza)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }
