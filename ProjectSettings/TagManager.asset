@@ -21,8 +21,8 @@ TagManager:
   - UI
   - 
   - 
+  - BuildingLayer
   - CharacterLayer
-  - 
   - 
   - 
   - 
@@ -48,4 +48,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BuildingLayer
+    uniqueID: 2414148159
+    locked: 0
+  - name: CharacterLayer
+    uniqueID: 2059115765
     locked: 0

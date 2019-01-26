@@ -14,6 +14,7 @@ public class MainCharacterMovementScript : MonoBehaviour
     SpriteRenderer sprRend;
     AudioSource audioSrc;
     bool musicPlay;
+    GameObject inventory;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +32,7 @@ public class MainCharacterMovementScript : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         musicPlay = true;
         audioSrc.Play();
+        inventory = GameObject.FindGameObjectWithTag("Inventory");
     }
 
     // Update is called once per frame
@@ -98,11 +100,18 @@ public class MainCharacterMovementScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("entered ");
         if (other.name == "NeighbourDoor")
         {
-            dogWalking = true;
-            dog.SetActive(true);
+            if (inventory.GetComponent<InventoryScript>().dogInInvertory == true)
+            {
+                dogWalking = true;
+                dog.SetActive(true);
+            }
+            else
+            {
+                dogWalking = false;
+                dog.SetActive(false);
+            }
             SceneManager.LoadScene("NeighborScene");
         }
         if (other.name == "ShopDoor")
