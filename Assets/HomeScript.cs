@@ -15,6 +15,9 @@ public class HomeScript : MonoBehaviour
         Debug.Log("Start home script");
         dogBoolean = false;
         inventory = GameObject.FindWithTag("Inventory");
+        GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+        GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
+
     }
 
     // Update is called once per frame
@@ -33,12 +36,17 @@ public class HomeScript : MonoBehaviour
         Debug.Log(dialogScript.nameText.text);
         Debug.Log(dialogScript.questionText.text);
 
-        if (name == "Sofa")
+        if (name == "DudeHungry")
         {
-            Debug.Log("Im a sofa");
-            dialogCanvas.GetComponent("DialogName");
             dialogScript.UpdateDialog("DudeHungry");
-            SceneManager.LoadScene("World");
+            GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+            GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
+        }
+        else if (name == "Dude")
+        {
+            dialogScript.UpdateDialog("Dude");
+            GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+            GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
         }
         else if (name == "Fridge")
         {
