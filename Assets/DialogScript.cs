@@ -25,8 +25,7 @@ public class DialogScript : MonoBehaviour
 
     public Text nameText;
     public Text questionText;
-    public Button buttonYes;
-    public Button buttonNo;
+    public Button buttonYes, buttonNo;
     private Canvas dialogCanvas;
     private Dictionary<string, DialogText> allDialog;
     // Start is called before the first frame update
@@ -34,9 +33,11 @@ public class DialogScript : MonoBehaviour
     {
         nameText.text = "Hello hello";
         questionText.text = "What do you wanna do?";
-        buttonNo.GetComponentInChildren<Text>().text = "No";
-        buttonNo.GetComponentInChildren<Text>().text = "OK";
-        this.dialogCanvas = GameObject.Find("HomeCanvas").GetComponent<Canvas>();
+        buttonNo.GetComponentInChildren<Text>().text = "Nooooo";
+        buttonYes.GetComponentInChildren<Text>().text = "OK ok oko ko";
+
+
+        this.dialogCanvas = GameObject.Find("DialogCanvas").GetComponent<Canvas>();
         Debug.Log(this.dialogCanvas.enabled);
         dialogCanvas.enabled = false;
         Debug.Log(this.dialogCanvas.enabled);
@@ -47,6 +48,7 @@ public class DialogScript : MonoBehaviour
         this.allDialog.Add("Fridge", new DialogText("Jääkaappi täytetty", "Jes, jääkaappi täytetty herkuilla, rauhallinen ilta pelastettu", "FRIDGE", false));
         this.allDialog.Add("Backbag", new DialogText("Reppu", "Kas, repusta löyty puhelin, tää ei näytä omalta. Ota puhelin repusta?", "BAGBACK", true));
         this.allDialog.Add("Neighbor", new DialogText("Naapuri ovella", "Hei, olen kipeänä ja Remppa-koira pitäisi viedä ulos, voisitko käydä kävelyttämässä Remppaa?", "NEIGHBOR", true));
+        this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wuffffff", "DOG", false));
 
     }
 
@@ -58,6 +60,7 @@ public class DialogScript : MonoBehaviour
 
     public void UpdateDialog(string name)
     {
+        Debug.Log(name);
         DialogText current = this.allDialog[name];
         Debug.Log(current.title);
         Debug.Log(current.question);
@@ -66,6 +69,16 @@ public class DialogScript : MonoBehaviour
         nameText.text = current.title;
         questionText.text = current.question;
         this.dialogCanvas.enabled = true;
+        Debug.Log(buttonNo);
+        buttonNo.onClick.AddListener(TaskClick);
+        buttonYes.onClick.AddListener(TaskClick);
+
+    }
+
+    void TaskClick()
+    {
+        Debug.Log("You have clicked a button!");
+        Debug.Log("maybee click again");
 
     }
 
