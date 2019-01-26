@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainCharacterMovementScript : MonoBehaviour
 {
@@ -102,18 +103,23 @@ public class MainCharacterMovementScript : MonoBehaviour
         {
             dogWalking = true;
             dog.SetActive(true);
+            SceneManager.LoadScene("NeighborScene");
         }
-        if (other.name == "Shop")
+        if (other.name == "ShopDoor")
         {
-            if(dogWalking == false)
-            { 
-                Debug.Log("Shop Shop!"); 
-            }
-            else if(dogWalking == true)
+            if (dogWalking == false)
             {
-                Debug.Log("No doggos allowed inside shop!"); 
+                Debug.Log("Shop Shop!");
+                SceneManager.LoadScene("ShopScene");
             }
-
+            else if (dogWalking == true)
+            {
+                Debug.Log("No doggos allowed inside shop!");
+            }
+        }
+        if(other.name == "HomeDoor")
+        {
+            SceneManager.LoadScene("HomeScene");
         }
     }
 }
