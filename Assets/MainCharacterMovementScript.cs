@@ -18,17 +18,16 @@ public class MainCharacterMovementScript : MonoBehaviour
     void Start()
     {
         rb2dMainCharacter = this.GetComponent<Rigidbody2D>();
-        //rb2dMainCharacter.freezeRotation = true;
+        rb2dMainCharacter.freezeRotation = true;
         dog = GameObject.FindGameObjectWithTag("Dog");
         anm = GetComponent<Animator>();
         anmDog = dog.GetComponent<Animator>();
-        anm.GetLayerIndex("CharacterLayer");
         sprRend = GetComponent<SpriteRenderer>();
+
         dogWalking = false;
         dog.SetActive(false);
 
         audioSrc = GetComponent<AudioSource>();
-        //Ensure the toggle is set to true for the music to play at start-up
         musicPlay = true;
         audioSrc.Play();
     }
@@ -70,6 +69,10 @@ public class MainCharacterMovementScript : MonoBehaviour
         {
             direction.x -= 1.0f; 
             anm.SetInteger("AnimationState", 4);
+            if (dogWalking == true)
+            {
+                anmDog.SetInteger("AnimationDogState", 4);
+            }
         }
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
@@ -77,13 +80,17 @@ public class MainCharacterMovementScript : MonoBehaviour
             anm.SetInteger("AnimationState", 1);
             if (dogWalking == true)
             {
-                anmDog.SetInteger("AnimationDogState", 2);
+                anmDog.SetInteger("AnimationDogState", 1);
             }
         }
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             direction.x += 1.0f;
             anm.SetInteger("AnimationState", 3);
+            if (dogWalking == true)
+            {
+                anmDog.SetInteger("AnimationDogState", 3);
+            }
         }
         return direction.normalized;
     }
