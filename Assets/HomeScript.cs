@@ -31,10 +31,16 @@ public class HomeScript : MonoBehaviour
         {
             Debug.Log("Im a sofa");
             dialogCanvas.GetComponent("DialogName");
+            dialogScript.UpdateDialog("DudeHungry");
         }
         else if (name == "Fridge")
         {
             Debug.Log("Im a fridge");
+            dialogScript.UpdateDialog("FridgeEmpty");
+        }
+        else if (name == "Backbag")
+        {
+            Debug.Log("Im a backbag");
         }
     }
 }
