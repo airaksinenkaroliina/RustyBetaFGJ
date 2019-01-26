@@ -6,7 +6,7 @@ public class DogScript : MonoBehaviour
 {
     private float distanceWalked;
     public float distanceGoal;
-    private bool distanceReached;
+    public bool distanceReached;
     GameObject dog;
     GameObject meter;
 
@@ -28,7 +28,6 @@ public class DogScript : MonoBehaviour
     {
         
     }
-
     public void Walking(float distance)
     {
         //Debug.Log(distance);

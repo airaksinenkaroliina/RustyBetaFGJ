@@ -7,10 +7,14 @@ using UnityEngine.SceneManagement;
 public class HomeScript : MonoBehaviour
 {
     public string Name;
+    public bool dogBoolean;
+    GameObject inventory;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Start home script");
+        dogBoolean = false;
+        inventory = GameObject.FindWithTag("Inventory");
     }
 
     // Update is called once per frame
@@ -28,6 +32,7 @@ public class HomeScript : MonoBehaviour
         DialogScript dialogScript = GameObject.Find("Dialog").GetComponent<DialogScript>();
         Debug.Log(dialogScript.nameText.text);
         Debug.Log(dialogScript.questionText.text);
+
         if (name == "Sofa")
         {
             Debug.Log("Im a sofa");
@@ -53,11 +58,44 @@ public class HomeScript : MonoBehaviour
         {
             Debug.Log("Wufff wuffff");
             dialogScript.UpdateDialog("Remppa");
+            inventory.GetComponent<InventoryScript>().Dog();
         }
         else if (name == "Back")
         {
             Debug.Log("Go out for adventure");
             SceneManager.LoadScene("World");
+        }
+        else if (name == "Drinks")
+        {
+            if (inventory.GetComponent<InventoryScript>().money >= 10)
+            {
+                inventory.GetComponent<InventoryScript>().drinks = true;
+                inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+            }
+        }
+        else if (name == "Pizza")
+        {
+            if (inventory.GetComponent<InventoryScript>().money >= 10)
+            {
+                inventory.GetComponent<InventoryScript>().pizza = true;
+                inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+            }
+        }
+        else if (name == "Vegetables")
+        {
+            if (inventory.GetComponent<InventoryScript>().money >= 10)
+            {
+                inventory.GetComponent<InventoryScript>().vegetables = true;
+                inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+            }
+        }
+        else if (name == "Snacks")
+        {
+            if (inventory.GetComponent<InventoryScript>().money >= 10)
+            {
+                inventory.GetComponent<InventoryScript>().snacks = true;
+                inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+            }
         }
     }
 }

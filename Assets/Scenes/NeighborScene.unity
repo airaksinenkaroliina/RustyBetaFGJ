@@ -493,6 +493,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &754681522
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -889,6 +891,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &1487755591
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -983,6 +987,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!61 &1651078498
 BoxCollider2D:
   m_ObjectHideFlags: 0

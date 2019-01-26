@@ -6,18 +6,33 @@ using UnityEngine.UI;
 
 public class InventoryScript : MonoBehaviour
 {
-    private int money;
-    public Text moneyText;
-    private List<string> bag;
-    public Text bagText;
+    public int money;
     public bool dogInInvertory;
+    public bool snacks;
+    public bool pizza;
+    public bool vegetables;
+    public bool drinks;
+
+    private static InventoryScript inventoryScript;
+    void Awake()
+    {
+        DontDestroyOnLoad(this);
+
+        if (inventoryScript == null)
+        {
+            inventoryScript = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        moneyText.text = "No money";
-        bagText.text = "No items in bag";
         dogInInvertory = false;
+        drinks = false;
     }
 
     // Update is called once per frame
@@ -28,7 +43,6 @@ public class InventoryScript : MonoBehaviour
     public void MoneyChange(int moneyAmount)
     {
         money += moneyAmount;
-        moneyText.text = money.ToString();
     }
     public void Dog()
     {
@@ -36,9 +50,9 @@ public class InventoryScript : MonoBehaviour
         {
             dogInInvertory = true;
         }
-        else if(dogInInvertory == true)
+        else 
         {
-            dogInInvertory = false;
+            dogInInvertory = false; 
         }
     }
 }

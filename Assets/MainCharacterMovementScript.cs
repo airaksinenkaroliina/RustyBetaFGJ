@@ -47,6 +47,11 @@ public class MainCharacterMovementScript : MonoBehaviour
             float distance = movementSpeed * Time.deltaTime;
             dog.GetComponent<DogScript>().Walking(distance);
         }
+        if (inventory.GetComponent<InventoryScript>().dogInInvertory == true)
+        {
+            dogWalking = true;
+            dog.SetActive(true);
+        }
 
     }
 
@@ -104,8 +109,15 @@ public class MainCharacterMovementScript : MonoBehaviour
         {
             if (inventory.GetComponent<InventoryScript>().dogInInvertory == true)
             {
+                inventory.GetComponent<InventoryScript>().Dog();
                 dogWalking = true;
                 dog.SetActive(true);
+            }
+            else if(dog.GetComponent<DogScript>().distanceReached == true)
+            {
+                inventory.GetComponent<InventoryScript>().MoneyChange(50);
+                dogWalking = false;
+                dog.SetActive(false);
             }
             else
             {

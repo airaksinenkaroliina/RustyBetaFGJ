@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &251977088
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -666,6 +668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!61 &705120447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -812,6 +816,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &755208155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1168,6 +1174,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &1095373921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1377,7 +1385,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.795959
+  orthographic size: 10.713129
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1480,8 +1488,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463535283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.388, z: 0}
+  m_LocalScale: {x: 1.0110301, y: 0.98322797, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1623,6 +1631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: 
+  dogBoolean: 0
+  inventory: {fileID: 0}
 --- !u!212 &2072789889
 SpriteRenderer:
   m_ObjectHideFlags: 0
