@@ -9,6 +9,8 @@ public class DogScript : MonoBehaviour
     private bool distanceReached;
     GameObject dog;
     GameObject meter;
+
+    AudioSource audioSrcDog;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,8 @@ public class DogScript : MonoBehaviour
         distanceReached = false;
         meter = GameObject.FindWithTag("WalkingMeter");
         meter.SetActive(false);
+        audioSrcDog = GetComponent<AudioSource>();
+        audioSrcDog.Play();
     }
 
     // Update is called once per frame
