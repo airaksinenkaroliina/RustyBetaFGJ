@@ -5,6 +5,32 @@ using UnityEngine.UI;
 
 public class DialogScript : MonoBehaviour
 {
+
+    public struct DialogText
+    {
+        public string title;
+        public string question;
+        public string type;
+
+        public DialogText(string t, string q, string ty) {
+            title = t;
+            question = q;
+            type = ty;
+        }
+
+    }
+    public class DialogDictonary
+    {
+        public Dictionary<string, DialogText> myDictonary;
+
+        public DialogDictonary()
+        {
+            myDictonary.Add("Dude", new DialogText("Joku makaa sohvalla", "Mitenköhän tuon kaiffarin saisi lähtemään?", "DUDE"));
+            myDictonary.Add("Fridge", new DialogText("Jääkaappi on tyhjä", "Meeeh, ei herkkuja, mitä tehdä?", "FRIDGE"));
+        }   
+    }
+
+
     public Text nameText;
     public Text questionText;
     public Button buttonYes;
