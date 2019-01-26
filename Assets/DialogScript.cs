@@ -49,6 +49,10 @@ public class DialogScript : MonoBehaviour
         this.allDialog.Add("Backbag", new DialogText("Reppu", "Kas, repusta löyty puhelin, tää ei näytä omalta. Ota puhelin repusta?", "BAGBACK", true));
         this.allDialog.Add("Neighbor", new DialogText("Naapuri ovella", "Hei, olen kipeänä ja Remppa-koira pitäisi viedä ulos, voisitko käydä kävelyttämässä Remppaa?", "NEIGHBOR", true));
         this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wuffffff", "DOG", false));
+        this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Haluatko ostaa tuoreita ja terveellisiä vihanneksia?", "VEGETABLES", true));
+        this.allDialog.Add("Pizza", new DialogText("Pizza", "Haluatko ostaa mehevän pizzan?", "PIZZA", true));
+        this.allDialog.Add("Drinks", new DialogText("Drinks", "Haluatko ostaa virkistävää Jaffaa?", "DRINKS", true));
+        this.allDialog.Add("Snacks", new DialogText("Snacks", "Nom Nom, haluatko ostaa sipsejä leffailtaa varten?", "SNACKS", true));
 
     }
 
