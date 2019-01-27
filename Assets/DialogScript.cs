@@ -46,7 +46,7 @@ public class DialogScript : MonoBehaviour
         this.allDialog.Add("Dude", new DialogText("Outs… I’m hungry...", "Thank you for the food.. I should get going… But where is my phone?", "DUDE", false));
         this.allDialog.Add("FridgeEmpty", new DialogText("Fridge is empty…!", "I need comfort food… What should I do?", "FRIDGE", false));
         this.allDialog.Add("Fridge", new DialogText("Yam!Food in fridge!", "Now I will be able to relax my tummy fully", "FRIDGE", false));
-        this.allDialog.Add("Backbag", new DialogText("Backbag”, “Ou, there is a phone in the backlog..But it isn’t mine… Take phone from the backbag? ", "BAGBACK", true));
+        this.allDialog.Add("Backbag", new DialogText("Backbag”, “Ou, there is a phone in the backlog..But it isn’t mine…", "Take phone from the backbag? ", "BAGBACK", true));
         this.allDialog.Add("Neighbor", new DialogText("Neighbor at the door", "Ou, I’m so sorry Remppa is barking. I’m sick and Remppa has so much energy. Can you go to a with walk Remppa?", "NEIGHBOR", true));
         this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wufff", "DOG", false));
         this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Would you like to buy fresh and healthy vegetables ? ", "VEGETABLES", true));
