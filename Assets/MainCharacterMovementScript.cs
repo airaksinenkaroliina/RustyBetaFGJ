@@ -120,6 +120,7 @@ public class MainCharacterMovementScript : MonoBehaviour
                 inventory.GetComponent<InventoryScript>().MoneyChange(50);
                 dogWalking = false;
                 dog.SetActive(false);
+                inventory.GetComponent<InventoryScript>().dogBarking = false;
             }
             else
             {

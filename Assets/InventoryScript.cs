@@ -8,11 +8,13 @@ public class InventoryScript : MonoBehaviour
 {
     public int money;
     public bool dogInInvertory;
+    public bool dogBarking;
     public bool snacks;
     public bool pizza;
     public bool vegetables;
     public bool drinks;
     public bool dudeHungry;
+    public bool dudeLeft;
     public bool phone;
 
     private static InventoryScript inventoryScript;
@@ -35,6 +37,7 @@ public class InventoryScript : MonoBehaviour
     {
         Debug.Log("start inventory");
         dogInInvertory = false;
+        dogBarking = true;
         drinks = false;
         dudeHungry = true;
         phone = false;
@@ -91,5 +94,13 @@ public class InventoryScript : MonoBehaviour
         {
             return false;
         }
+    }
+    public bool EndGame()
+    { 
+        if(dogBarking == false && dudeLeft == true && snacks == true)
+        {
+            return true;
+        }
+        return false;
     }
 }
