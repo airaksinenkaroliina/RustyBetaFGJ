@@ -8,17 +8,17 @@ public class DogScript : MonoBehaviour
     public float distanceGoal;
     public bool distanceReached;
     GameObject dog;
-    GameObject meter;
-
+    GameObject meterReached;
     AudioSource audioSrcDog;
+
     // Start is called before the first frame update
     void Start()
     {
         distanceWalked = 0;
         dog = GameObject.FindWithTag("Dog");
         distanceReached = false;
-        meter = GameObject.FindWithTag("WalkingMeter");
-        meter.SetActive(false);
+        meterReached = GameObject.FindWithTag("WalkingMeterReached");
+        meterReached.SetActive(false);
         audioSrcDog = GetComponent<AudioSource>();
         audioSrcDog.Play();
     }
@@ -30,18 +30,14 @@ public class DogScript : MonoBehaviour
     }
     public void Walking(float distance)
     {
-        //Debug.Log(distance);
         if(distanceWalked < distanceGoal)
         {
             distanceWalked += distance;
         }
-        //Debug.Log(distanceWalked);
         else if(distanceWalked > distanceGoal && distanceReached == false)
         {
-            meter.SetActive(true);
-            //int money = 50;
+            meterReached.SetActive(true);
             distanceReached = true;
-            //GameObject.FindWithTag("Inventory").GetComponent<InventoryScript>().MoneyChange(money);
         }
     }
 }
