@@ -117,6 +117,7 @@ public class MainCharacterMovementScript : MonoBehaviour
             else if(inventory.GetComponent<InventoryScript>().dogInInvertory == true
             && dog.GetComponent<DogScript>().distanceReached == true)
             {
+                inventory.GetComponent<InventoryScript>().Dog();
                 inventory.GetComponent<InventoryScript>().MoneyChange(50);
                 dogWalking = false;
                 dog.SetActive(false);
