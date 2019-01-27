@@ -395,7 +395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   dogBoolean: 0
-  inventory: {fileID: 0}
 --- !u!212 &251977088
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -441,7 +440,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &251977089
@@ -669,7 +668,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   dogBoolean: 0
-  inventory: {fileID: 0}
 --- !u!61 &705120447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -817,7 +815,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   dogBoolean: 0
-  inventory: {fileID: 0}
 --- !u!212 &755208155
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -863,7 +860,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &755208156
@@ -1175,7 +1172,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   dogBoolean: 0
-  inventory: {fileID: 0}
 --- !u!212 &1095373921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1221,7 +1217,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1095373922
@@ -1385,7 +1381,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10.713129
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1489,7 +1485,7 @@ Transform:
   m_GameObject: {fileID: 1463535283}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.388, z: 0}
-  m_LocalScale: {x: 1.0110301, y: 0.98322797, z: 1}
+  m_LocalScale: {x: 0.93, y: 0.95, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -1632,7 +1628,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: 
   dogBoolean: 0
-  inventory: {fileID: 0}
 --- !u!212 &2072789889
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1678,7 +1673,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2072789890
