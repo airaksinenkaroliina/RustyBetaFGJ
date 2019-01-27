@@ -1526,6 +1526,7 @@ MonoBehaviour:
   questionText: {fileID: 697811190}
   buttonYes: {fileID: 1298871377}
   buttonNo: {fileID: 1804229393}
+  bNo: {fileID: 0}
 --- !u!114 &1938447285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,7 +1760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1150, y: 588}
+  m_AnchoredPosition: {x: 1020, y: 520}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2131662219
