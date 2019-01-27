@@ -12,6 +12,8 @@ TagManager:
   - WalkingMeter
   - InventoryCanvas
   - Inventory
+  - WalkingMeterNotReached
+  - WalkingMeterReached
   layers:
   - Default
   - TransparentFX

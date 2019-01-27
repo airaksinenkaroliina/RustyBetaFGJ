@@ -22,7 +22,6 @@ public class DialogScript : MonoBehaviour
 
     }
 
-
     public Text nameText;
     public Text questionText;
     public Button buttonYes, buttonNo;
