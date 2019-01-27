@@ -13,7 +13,6 @@ public class MainCharacterMovementScript : MonoBehaviour
     Animator anmDog;
     SpriteRenderer sprRend;
     AudioSource audioSrc;
-    bool musicPlay;
     GameObject inventory;
 
     // Start is called before the first frame update
@@ -30,7 +29,6 @@ public class MainCharacterMovementScript : MonoBehaviour
         dog.SetActive(false);
 
         audioSrc = GetComponent<AudioSource>();
-        musicPlay = true;
         audioSrc.Play();
         inventory = GameObject.FindGameObjectWithTag("Inventory");
     }
