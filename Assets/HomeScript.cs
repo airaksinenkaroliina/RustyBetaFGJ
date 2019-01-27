@@ -105,5 +105,12 @@ public class HomeScript : MonoBehaviour
                 inventory.GetComponent<InventoryScript>().MoneyChange(-10);
             }
         }
+        else if (name == "TV")
+        {
+            if (inventory.GetComponent<InventoryScript>().EndGame() )
+            {
+                SceneManager.LoadScene("EndScene"); 
+            }
+        }
     }
 }

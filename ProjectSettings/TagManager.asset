@@ -23,7 +23,7 @@ TagManager:
   - 
   - BuildingLayer
   - CharacterLayer
-  - 
+  - UI
   - 
   - 
   - 
@@ -54,4 +54,7 @@ TagManager:
     locked: 0
   - name: CharacterLayer
     uniqueID: 2059115765
+    locked: 0
+  - name: UI
+    uniqueID: 2181100819
     locked: 0

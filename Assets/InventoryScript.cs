@@ -18,6 +18,7 @@ public class InventoryScript : MonoBehaviour
     public bool phone;
 
     private static InventoryScript inventoryScript;
+
     void Awake()
     {
         DontDestroyOnLoad(this);
