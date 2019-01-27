@@ -995,59 +995,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1 &1270091783
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1270091785}
-  - component: {fileID: 1270091784}
-  m_Layer: 0
-  m_Name: Inventory
-  m_TagString: Inventory
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1270091784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270091783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 833de63448a364cd89d743d8b80915b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0
-  dogInInvertory: 1
-  dogBarking: 0
-  snacks: 0
-  pizza: 0
-  vegetables: 0
-  drinks: 0
-  dudeHungry: 0
-  dudeLeft: 0
-  phone: 0
---- !u!4 &1270091785
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270091783}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.8220024, y: -2.4918327, z: -0.018130839}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1321699518
 GameObject:
   m_ObjectHideFlags: 0
@@ -1216,7 +1163,7 @@ Transform:
   m_Children:
   - {fileID: 22193610}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562446829
 GameObject:
@@ -1229,7 +1176,6 @@ GameObject:
   - component: {fileID: 1562446830}
   - component: {fileID: 1562446834}
   - component: {fileID: 1562446833}
-  - component: {fileID: 1562446832}
   - component: {fileID: 1562446831}
   m_Layer: 8
   m_Name: Home
@@ -1274,18 +1220,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1562446832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1562446829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780618ca631eb4d96951b7b75fe772f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1562446833
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1817,7 +1751,6 @@ GameObject:
   - component: {fileID: 1757313774}
   - component: {fileID: 1757313773}
   - component: {fileID: 1757313772}
-  - component: {fileID: 1757313771}
   - component: {fileID: 1757313775}
   m_Layer: 8
   m_Name: Neighbour
@@ -1826,18 +1759,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1757313771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1757313770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780618ca631eb4d96951b7b75fe772f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1757313772
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2073,7 +1994,6 @@ GameObject:
   - component: {fileID: 2050799095}
   - component: {fileID: 2050799099}
   - component: {fileID: 2050799098}
-  - component: {fileID: 2050799097}
   - component: {fileID: 2050799096}
   m_Layer: 8
   m_Name: Shop
@@ -2118,18 +2038,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2050799097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050799094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 780618ca631eb4d96951b7b75fe772f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2050799098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2335,7 +2243,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
