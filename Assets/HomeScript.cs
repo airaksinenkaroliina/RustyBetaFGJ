@@ -70,7 +70,14 @@ public class HomeScript : MonoBehaviour
         else if (name == "Fridge")
         {
             Debug.Log("Im a fridge");
-            dialogScript.UpdateDialog("FridgeEmpty");
+            if (inventory.GetComponent<InventoryScript>().snacks)
+            {
+                dialogScript.UpdateDialog("Fridge");
+            }
+            else
+            {
+                dialogScript.UpdateDialog("FridgeEmpty");
+            }
         }
         else if (name == "Bag")
         {
