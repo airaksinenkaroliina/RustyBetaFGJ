@@ -75,35 +75,43 @@ public class HomeScript : MonoBehaviour
         }
         else if (name == "Drinks")
         {
+            dialogScript.UpdateDialog("Drinks");
+            /*
             if (inventory.GetComponent<InventoryScript>().money >= 10)
             {
                 inventory.GetComponent<InventoryScript>().drinks = true;
                 inventory.GetComponent<InventoryScript>().MoneyChange(-10);
-            }
+            }*/
         }
         else if (name == "Pizza")
         {
+            dialogScript.UpdateDialog("Pizza");
+            /*
             if (inventory.GetComponent<InventoryScript>().money >= 10)
             {
                 inventory.GetComponent<InventoryScript>().pizza = true;
                 inventory.GetComponent<InventoryScript>().MoneyChange(-10);
-            }
+            }*/
         }
         else if (name == "Vegetables")
         {
+            dialogScript.UpdateDialog("Vegetables");
+            /*
             if (inventory.GetComponent<InventoryScript>().money >= 10)
             {
                 inventory.GetComponent<InventoryScript>().vegetables = true;
                 inventory.GetComponent<InventoryScript>().MoneyChange(-10);
-            }
+            }*/
         }
         else if (name == "Snacks")
         {
+            dialogScript.UpdateDialog("Snacks");
+            /*
             if (inventory.GetComponent<InventoryScript>().money >= 10)
             {
                 inventory.GetComponent<InventoryScript>().snacks = true;
                 inventory.GetComponent<InventoryScript>().MoneyChange(-10);
-            }
+            } */
         }
         else if (name == "TV")
         {

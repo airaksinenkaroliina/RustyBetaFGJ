@@ -66,7 +66,7 @@ public class DialogScript : MonoBehaviour
         nameText.text = current.title;
         questionText.text = current.question;
         this.dialogCanvas.enabled = true;
-        buttonYes.onClick.AddListener(() => TaskClick(true));
+        buttonYes.onClick.AddListener(() => TaskClick(true, current.type));
         if (!current.requiresAnswer)
         {
             GameObject.Find("No").SetActive(false);
@@ -74,16 +74,50 @@ public class DialogScript : MonoBehaviour
         else
         {
             GameObject.Find("No").SetActive(true);
-            GameObject.Find("No").GetComponent<Button>().onClick.AddListener(() => TaskClick(false));
+            GameObject.Find("No").GetComponent<Button>().onClick.AddListener(() => TaskClick(false, current.type));
         }
 
     }
 
-     void TaskClick(bool doIt)
+     void TaskClick(bool doIt, string type)
     {
         if (doIt)
         {
             Debug.Log("Just do it!");
+            GameObject inventory = GameObject.FindWithTag("Inventory");
+            if (type == "PIZZA")
+            {
+                if (inventory.GetComponent<InventoryScript>().money >= 10)
+                {
+                    inventory.GetComponent<InventoryScript>().pizza = true;
+                    inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+                }
+            }
+            else if (type == "SNACKS")
+            {
+                if (inventory.GetComponent<InventoryScript>().money >= 10)
+                {
+                    inventory.GetComponent<InventoryScript>().snacks = true;
+                    inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+                }
+            }
+            else if (type == "DRINKS")
+            {
+                if (inventory.GetComponent<InventoryScript>().money >= 10)
+                {
+                    inventory.GetComponent<InventoryScript>().drinks = true;
+                    inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+                }
+            }
+            else if (type == "VEGETABLES")
+            {
+                if (inventory.GetComponent<InventoryScript>().money >= 10)
+                {
+                    inventory.GetComponent<InventoryScript>().vegetables = true;
+                    inventory.GetComponent<InventoryScript>().MoneyChange(-10);
+                }
+            }
+
         }
         else
         {
