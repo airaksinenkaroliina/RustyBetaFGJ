@@ -27,6 +27,7 @@ public class DialogScript : MonoBehaviour
     public Button buttonYes, buttonNo;
     private Canvas dialogCanvas;
     private Dictionary<string, DialogText> allDialog;
+    private string dialogType;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,12 +35,12 @@ public class DialogScript : MonoBehaviour
         questionText.text = "What do you wanna do?";
         buttonNo.GetComponentInChildren<Text>().text = "No";
         buttonYes.GetComponentInChildren<Text>().text = "Ok";
+        buttonYes.onClick.AddListener(() => TaskClick(true));
+        buttonNo.onClick.AddListener(() => TaskClick(false));
 
 
         this.dialogCanvas = GameObject.Find("DialogCanvas").GetComponent<Canvas>();
-        Debug.Log(this.dialogCanvas.enabled);
         dialogCanvas.enabled = false;
-        Debug.Log(this.dialogCanvas.enabled);
         this.allDialog = new Dictionary<string, DialogText>();
         this.allDialog.Add("DudeHungry", new DialogText("Someone is lying on the sofa...", "Outs, last night’s party was a little bit too rough and my friend is not feeling well. It is hungry...", "DUDE", false));
         this.allDialog.Add("Dude", new DialogText("Outs... I’m hungry...", "Thank you for the food.. I should get going... But where is my phone?", "DUDE", false));
@@ -66,7 +67,7 @@ public class DialogScript : MonoBehaviour
         nameText.text = current.title;
         questionText.text = current.question;
         this.dialogCanvas.enabled = true;
-        buttonYes.onClick.AddListener(() => TaskClick(true, current.type));
+        this.dialogType = current.type;
         if (!current.requiresAnswer)
         {
             GameObject.Find("No").SetActive(false);
@@ -74,18 +75,19 @@ public class DialogScript : MonoBehaviour
         else
         {
             GameObject.Find("No").SetActive(true);
-            GameObject.Find("No").GetComponent<Button>().onClick.AddListener(() => TaskClick(false, current.type));
         }
 
     }
 
-     void TaskClick(bool doIt, string type)
+     void TaskClick(bool doIt)
     {
+        Debug.Log("Task cliiiickk");
+        Debug.Log(this.dialogType);
         if (doIt)
         {
             Debug.Log("Just do it!");
             GameObject inventory = GameObject.FindWithTag("Inventory");
-            if (type == "PIZZA")
+            if (this.dialogType == "PIZZA")
             {
                 if (inventory.GetComponent<InventoryScript>().money >= 10)
                 {
@@ -93,7 +95,7 @@ public class DialogScript : MonoBehaviour
                     inventory.GetComponent<InventoryScript>().MoneyChange(-10);
                 }
             }
-            else if (type == "SNACKS")
+            else if (this.dialogType == "SNACKS")
             {
                 if (inventory.GetComponent<InventoryScript>().money >= 10)
                 {
@@ -101,7 +103,7 @@ public class DialogScript : MonoBehaviour
                     inventory.GetComponent<InventoryScript>().MoneyChange(-10);
                 }
             }
-            else if (type == "DRINKS")
+            else if (this.dialogType == "DRINKS")
             {
                 if (inventory.GetComponent<InventoryScript>().money >= 10)
                 {
@@ -109,7 +111,7 @@ public class DialogScript : MonoBehaviour
                     inventory.GetComponent<InventoryScript>().MoneyChange(-10);
                 }
             }
-            else if (type == "VEGETABLES")
+            else if (this.dialogType == "VEGETABLES")
             {
                 if (inventory.GetComponent<InventoryScript>().money >= 10)
                 {
