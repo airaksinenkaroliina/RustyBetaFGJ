@@ -33,8 +33,8 @@ public class DialogScript : MonoBehaviour
     {
         nameText.text = "Hello hello";
         questionText.text = "What do you wanna do?";
-        buttonNo.GetComponentInChildren<Text>().text = "Nooooo";
-        buttonYes.GetComponentInChildren<Text>().text = "OK ok oko ko";
+        buttonNo.GetComponentInChildren<Text>().text = "No";
+        buttonYes.GetComponentInChildren<Text>().text = "Ok";
 
 
         this.dialogCanvas = GameObject.Find("DialogCanvas").GetComponent<Canvas>();
@@ -67,14 +67,21 @@ public class DialogScript : MonoBehaviour
         nameText.text = current.title;
         questionText.text = current.question;
         this.dialogCanvas.enabled = true;
-        buttonNo.onClick.AddListener(() => TaskClick(false));
         buttonYes.onClick.AddListener(() => TaskClick(true));
+        if (!current.requiresAnswer)
+        {
+            GameObject.Find("No").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("No").SetActive(true);
+            GameObject.Find("No").GetComponent<Button>().onClick.AddListener(() => TaskClick(false));
+        }
 
     }
 
      void TaskClick(bool doIt)
     {
-        Debug.Log("You have clicked a button, name is below");
         if (doIt)
         {
             Debug.Log("Just do it!");
