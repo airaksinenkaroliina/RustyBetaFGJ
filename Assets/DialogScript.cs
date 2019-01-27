@@ -46,10 +46,10 @@ public class DialogScript : MonoBehaviour
         this.allDialog.Add("DudeHungry", new DialogText("Someone is lying on the sofa...", "Outs, last night’s party was a little bit too rough and my friend is not feeling well. It is hungry...", "DUDE", false));
         this.allDialog.Add("Dude", new DialogText("Outs... I’m hungry...", "Thank you for the food.. I should get going... But where is my phone?", "DUDE", false));
         this.allDialog.Add("DudeWithPhone", new DialogText("Thanks for the pizza!", "Se o moro!", "DUDE", false));
-        this.allDialog.Add("FridgeEmpty", new DialogText("Fridge is empty...!", "I need comfort food... What should I do?", "FRIDGE", false));
+        this.allDialog.Add("FridgeEmpty", new DialogText("Fridge is empty...!", "What should I do?", "FRIDGE", false));
         this.allDialog.Add("Fridge", new DialogText("Yum! Food in the fridge!", "Now I will be able to relax with my tummy full", "FRIDGE", false));
         this.allDialog.Add("Bag", new DialogText("Backbag”, “Ou, there is a phone in the backbag.. But it isn’t mine...", "Take phone from the backbag?", "BAG", true));
-        this.allDialog.Add("Neighbor", new DialogText("Neighbor at the door", "Ou, I’m so sorry Remppa is barking. I’m sick and Remppa has so much energy. Can you go to a walk with Remppa?", "NEIGHBOR", true));
+        this.allDialog.Add("Neighbor", new DialogText("Neighbor at the door", "Ou, I’m so sorry Remppa is barking. I’m sick and Remppa has so much energy. Can you take Remppa for a walk?", "NEIGHBOR", false));
         this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wufff", "DOG", false));
         this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Would you like to buy fresh and healthy vegetables?", "VEGETABLES", true));
         this.allDialog.Add("Pizza", new DialogText("Pizza", "Would you like to buy a cheesy pizza?", "PIZZA", true));
