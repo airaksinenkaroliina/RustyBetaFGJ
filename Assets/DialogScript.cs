@@ -64,26 +64,27 @@ public class DialogScript : MonoBehaviour
 
     public void UpdateDialog(string name)
     {
-        Debug.Log(name);
         DialogText current = this.allDialog[name];
-        Debug.Log(current.title);
-        Debug.Log(current.question);
-        Debug.Log(current.type);
-        Debug.Log(current.requiresAnswer);
         nameText.text = current.title;
         questionText.text = current.question;
         this.dialogCanvas.enabled = true;
-        Debug.Log(buttonNo);
-        buttonNo.onClick.AddListener(TaskClick);
-        buttonYes.onClick.AddListener(TaskClick);
+        buttonNo.onClick.AddListener(() => TaskClick(false));
+        buttonYes.onClick.AddListener(() => TaskClick(true));
 
     }
 
-    void TaskClick()
+     void TaskClick(bool doIt)
     {
-        Debug.Log("You have clicked a button!");
-        Debug.Log("maybee click again");
-
+        Debug.Log("You have clicked a button, name is below");
+        if (doIt)
+        {
+            Debug.Log("Just do it!");
+        }
+        else
+        {
+            Debug.Log("Dont do it");
+        }
+        this.dialogCanvas.enabled = false;
     }
 
 }

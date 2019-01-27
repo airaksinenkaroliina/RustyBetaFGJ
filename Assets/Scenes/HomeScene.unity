@@ -1352,7 +1352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
-  dogInInvertory: 0
+  dogInInvertory: 1
   dogBarking: 0
   snacks: 0
   pizza: 0
