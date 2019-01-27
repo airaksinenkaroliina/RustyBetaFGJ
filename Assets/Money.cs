@@ -11,20 +11,6 @@ public class Money : MonoBehaviour
 
     private static Money moneyScript;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this);
-
-        if (moneyScript == null)
-        {
-            moneyScript = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {
