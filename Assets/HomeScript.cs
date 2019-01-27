@@ -16,8 +16,9 @@ public class HomeScript : MonoBehaviour
         dogBoolean = false;
         inventory = GameObject.FindWithTag("Inventory");
         GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+        GameObject.Find("DudeHungry").SetActive(inventory.GetComponent<InventoryScript>().HungryDude());
         GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
-
+        GameObject.Find("Dude").SetActive(inventory.GetComponent<InventoryScript>().PhoneLostDude());
     }
 
     // Update is called once per frame
