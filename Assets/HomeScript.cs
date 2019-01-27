@@ -9,16 +9,25 @@ public class HomeScript : MonoBehaviour
     public string Name;
     public bool dogBoolean;
     GameObject inventory;
+    GameObject hungryDude;
+    GameObject dude;
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Start home script");
         dogBoolean = false;
         inventory = GameObject.FindWithTag("Inventory");
-        GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
-        GameObject.Find("DudeHungry").SetActive(inventory.GetComponent<InventoryScript>().HungryDude());
-        GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
-        GameObject.Find("Dude").SetActive(inventory.GetComponent<InventoryScript>().PhoneLostDude());
+        hungryDude = GameObject.Find("DudeHungry");
+        if (hungryDude != null) {
+            hungryDude.GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+            hungryDude.SetActive(inventory.GetComponent<InventoryScript>().HungryDude());
+        }
+        dude = GameObject.Find("Dude");
+        if (dude != null) {
+            dude.GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
+            dude.SetActive(inventory.GetComponent<InventoryScript>().PhoneLostDude());
+        }
+
     }
 
     // Update is called once per frame
@@ -39,15 +48,24 @@ public class HomeScript : MonoBehaviour
 
         if (name == "DudeHungry")
         {
+            Debug.Log("Hungry duuuudee");
             dialogScript.UpdateDialog("DudeHungry");
-            GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
-            GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
+            hungryDude.GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
+            dude.GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
         }
         else if (name == "Dude")
         {
-            dialogScript.UpdateDialog("Dude");
-            GameObject.Find("DudeHungry").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().HungryDude();
-            GameObject.Find("Dude").GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
+            Debug.Log("Nowww duuuudee");
+            if (inventory.GetComponent<InventoryScript>().phone) 
+            {
+                dialogScript.UpdateDialog("DudeWithPhone");
+                inventory.GetComponent<InventoryScript>().dudeLeft = true;
+            }
+            else
+            {
+                dialogScript.UpdateDialog("Dude");
+            }
+            dude.GetComponent<Renderer>().enabled = inventory.GetComponent<InventoryScript>().PhoneLostDude();
         }
         else if (name == "Fridge")
         {
