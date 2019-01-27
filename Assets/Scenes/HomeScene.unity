@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 401182607}
   - component: {fileID: 401182606}
   - component: {fileID: 401182610}
+  - component: {fileID: 401182611}
   m_Layer: 0
   m_Name: Fridge
   m_TagString: Untagged
@@ -742,14 +743,14 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fad559c7de6816e4990346e4a5366d18, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 24
+  Priority: 77
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -827,6 +828,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &401182611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401182605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75dd61684a2dd4514baf8bb41ffefe5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &434455138
 GameObject:
   m_ObjectHideFlags: 0
