@@ -42,18 +42,17 @@ public class DialogScript : MonoBehaviour
         dialogCanvas.enabled = false;
         Debug.Log(this.dialogCanvas.enabled);
         this.allDialog = new Dictionary<string, DialogText>();
-        this.allDialog.Add("DudeHungry", new DialogText("Joku makaa sohvalla", "Eilisillan bileet on menny myöhään ja kaverilla on kaamea darra. Se vaan örisee, että nälkä ois", "DUDE", false));
-        this.allDialog.Add("Dude", new DialogText("Darramättö pelastaa", "Kiitos ruuasta, voisin lähteä kotiin mutta mun puhelin on hukassa...", "DUDE", false));
-        this.allDialog.Add("FridgeEmpty", new DialogText("Jääkaappi on tyhjä", "Meeeh, ei herkkuja, mitä tehdä?", "FRIDGE", false));
-        this.allDialog.Add("Fridge", new DialogText("Jääkaappi täytetty", "Jes, jääkaappi täytetty herkuilla, rauhallinen ilta pelastettu", "FRIDGE", false));
-        this.allDialog.Add("Backbag", new DialogText("Reppu", "Kas, repusta löyty puhelin, tää ei näytä omalta. Ota puhelin repusta?", "BAGBACK", true));
-        this.allDialog.Add("Neighbor", new DialogText("Naapuri ovella", "Hei, olen kipeänä ja Remppa-koira pitäisi viedä ulos, voisitko käydä kävelyttämässä Remppaa?", "NEIGHBOR", true));
-        this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wuffffff", "DOG", false));
-        this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Haluatko ostaa tuoreita ja terveellisiä vihanneksia?", "VEGETABLES", true));
-        this.allDialog.Add("Pizza", new DialogText("Pizza", "Haluatko ostaa mehevän pizzan?", "PIZZA", true));
-        this.allDialog.Add("Drinks", new DialogText("Drinks", "Haluatko ostaa virkistävää Jaffaa?", "DRINKS", true));
-        this.allDialog.Add("Snacks", new DialogText("Snacks", "Nom Nom, haluatko ostaa sipsejä leffailtaa varten?", "SNACKS", true));
-
+        this.allDialog.Add("DudeHungry", new DialogText("Someone is lying on sofa...", "Outs, last night party was a little bit too rough for friend and friend is not feeling well.  It is hungry...", "DUDE", false));
+        this.allDialog.Add("Dude", new DialogText("Outs… I’m hungry...", "Thank you for the food.. I should get going… But where is my phone?", "DUDE", false));
+        this.allDialog.Add("FridgeEmpty", new DialogText("Fridge is empty…!", "I need comfort food… What should I do?", "FRIDGE", false));
+        this.allDialog.Add("Fridge", new DialogText("Yam!Food in fridge!", "Now I will be able to relax my tummy fully", "FRIDGE", false));
+        this.allDialog.Add("Backbag", new DialogText("Backbag”, “Ou, there is a phone in the backlog..But it isn’t mine… Take phone from the backbag? ", "BAGBACK", true));
+        this.allDialog.Add("Neighbor", new DialogText("Neighbor at the door", "Ou, I’m so sorry Remppa is barking. I’m sick and Remppa has so much energy. Can you go to a with walk Remppa?", "NEIGHBOR", true));
+        this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wufff", "DOG", false));
+        this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Would you like to buy fresh and healthy vegetables ? ", "VEGETABLES", true));
+        this.allDialog.Add("Pizza", new DialogText("Pizza", "Would you like to buy a cheesy pizza ? ", "PIZZA", true));
+        this.allDialog.Add("Drinks", new DialogText("Drinks", "Would you like to buy soft drinks ? ", "DRINKS", true));
+        this.allDialog.Add("Snacks", new DialogText("Snacks", "Nam, would you like to buy chips for the evening?", "SNACKS", true)); 
     }
 
     // Update is called once per frame

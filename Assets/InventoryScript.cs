@@ -104,4 +104,6 @@ public class InventoryScript : MonoBehaviour
         }
         return false;
     }
+
+
 }

@@ -143,7 +143,14 @@ public class MainCharacterMovementScript : MonoBehaviour
         }
         if(other.name == "HomeDoor")
         {
-            SceneManager.LoadScene("HomeScene");
+            if (dogWalking == false)
+            {
+                SceneManager.LoadScene("HomeScene");
+            }
+            else if (dogWalking == true)
+            {
+                Debug.Log("I don't want doghair inside..");
+            }
         }
     }
 }
