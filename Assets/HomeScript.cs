@@ -54,9 +54,13 @@ public class HomeScript : MonoBehaviour
             Debug.Log("Im a fridge");
             dialogScript.UpdateDialog("FridgeEmpty");
         }
-        else if (name == "Backbag")
+        else if (name == "Bag")
         {
-            Debug.Log("Im a backbag");
+            Debug.Log("Im a bag");
+            if (inventory.GetComponent<InventoryScript>().PhoneLostDude())
+            {
+                dialogScript.UpdateDialog("Bag");
+            }
         }
         else if (name == "Neighbor")
         {

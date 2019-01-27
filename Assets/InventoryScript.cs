@@ -105,5 +105,10 @@ public class InventoryScript : MonoBehaviour
         return false;
     }
 
+    public void AddPhone()
+    {
+        phone = true;
+    }
+
 
 }

@@ -28,6 +28,7 @@ public class DialogScript : MonoBehaviour
     private Canvas dialogCanvas;
     private Dictionary<string, DialogText> allDialog;
     private string dialogType;
+    public GameObject bNo;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class DialogScript : MonoBehaviour
         buttonYes.GetComponentInChildren<Text>().text = "Ok";
         buttonYes.onClick.AddListener(() => TaskClick(true));
         buttonNo.onClick.AddListener(() => TaskClick(false));
-
+        this.bNo = GameObject.Find("No");
 
         this.dialogCanvas = GameObject.Find("DialogCanvas").GetComponent<Canvas>();
         dialogCanvas.enabled = false;
@@ -46,13 +47,14 @@ public class DialogScript : MonoBehaviour
         this.allDialog.Add("Dude", new DialogText("Outs... I’m hungry...", "Thank you for the food.. I should get going... But where is my phone?", "DUDE", false));
         this.allDialog.Add("FridgeEmpty", new DialogText("Fridge is empty...!", "I need comfort food... What should I do?", "FRIDGE", false));
         this.allDialog.Add("Fridge", new DialogText("Yum! Food in the fridge!", "Now I will be able to relax with my tummy full", "FRIDGE", false));
-        this.allDialog.Add("Backbag", new DialogText("Backbag”, “Ou, there is a phone in the backbag.. But it isn’t mine...", "Take phone from the backbag?", "BAGBACK", true));
+        this.allDialog.Add("Bag", new DialogText("Backbag”, “Ou, there is a phone in the backbag.. But it isn’t mine...", "Take phone from the backbag?", "BAG", true));
         this.allDialog.Add("Neighbor", new DialogText("Neighbor at the door", "Ou, I’m so sorry Remppa is barking. I’m sick and Remppa has so much energy. Can you go to a walk with Remppa?", "NEIGHBOR", true));
         this.allDialog.Add("Remppa", new DialogText("Wuff wuffff", "Wuff wufffff wufff", "DOG", false));
         this.allDialog.Add("Vegetables", new DialogText("Vegetables", "Would you like to buy fresh and healthy vegetables?", "VEGETABLES", true));
         this.allDialog.Add("Pizza", new DialogText("Pizza", "Would you like to buy a cheesy pizza?", "PIZZA", true));
         this.allDialog.Add("Drinks", new DialogText("Drinks", "Would you like to buy soft drinks?", "DRINKS", true));
-        this.allDialog.Add("Snacks", new DialogText("Snacks", "Nam, would you like to buy chips for the evening?", "SNACKS", true)); 
+        this.allDialog.Add("Snacks", new DialogText("Snacks", "Nam, would you like to buy chips for the evening?", "SNACKS", true));
+        Debug.Log(this.allDialog["Bag"]);
     }
 
     // Update is called once per frame
@@ -70,11 +72,11 @@ public class DialogScript : MonoBehaviour
         this.dialogType = current.type;
         if (!current.requiresAnswer)
         {
-            GameObject.Find("No").SetActive(false);
+            this.bNo.SetActive(false);
         }
         else
         {
-            GameObject.Find("No").SetActive(true);
+            this.bNo.SetActive(true);
         }
 
     }
@@ -118,6 +120,10 @@ public class DialogScript : MonoBehaviour
                     inventory.GetComponent<InventoryScript>().vegetables = true;
                     inventory.GetComponent<InventoryScript>().MoneyChange(-10);
                 }
+            }
+            else if (this.dialogType == "BAG")
+            {
+                    inventory.GetComponent<InventoryScript>().AddPhone();
             }
 
         }
